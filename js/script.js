@@ -16,6 +16,21 @@ function highlightActiveLink() {
 // Run on page load
 document.addEventListener('DOMContentLoaded', highlightActiveLink);
 
+// Menu toggle for mobile
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('open');
+    });
+    // Close menu when a nav link is clicked (mobile)
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('open');
+    }));
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
