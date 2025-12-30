@@ -88,18 +88,39 @@ if (inquiryForm) {
     inquiryForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const submitButton = this.querySelector('.submit-button');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
         // Get form values
-        const inputs = this.querySelectorAll('input, textarea');
-        const formData = {};
-        inputs.forEach(input => {
-            formData[input.placeholder] = input.value;
+        const formData = new FormData();
+        formData.append('name', document.getElementById('name').value);
+        formData.append('email', document.getElementById('email').value);
+        formData.append('phone', document.getElementById('phone').value);
+        formData.append('project', document.getElementById('project').value);
+        formData.append('message', document.getElementById('message').value);
+        
+        // Replace 'YOUR_SCRIPT_URL_HERE' with your actual Google Apps Script URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbymG2olGiqcLXUn5z8vsHgRKsHAxuoYD3CwtojHwCZt-KPp4xQT3IyCvRBmipiPaWTeZA/exec';
+        
+        fetch(scriptURL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+        .then(response => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            alert('Thank you for your inquiry! We will contact you shortly with information about our premium properties.');
+            this.reset();
+        })
+        .catch(error => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            console.error('Error!', error.message);
+            alert('There was an error sending your inquiry. Please try again or contact us directly at bhagwatprajaktas@gmail.com');
         });
-        
-        // Show success message
-        alert('Thank you for your inquiry! We will contact you shortly with information about our premium properties.');
-        
-        // Reset form
-        this.reset();
     });
 }
 
