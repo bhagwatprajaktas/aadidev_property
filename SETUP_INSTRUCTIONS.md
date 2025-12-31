@@ -44,7 +44,7 @@
 2. Go to the Inquiry page
 3. Fill out the form with test data
 4. Submit the form
-5. Check your email at **bhagwatprajaktas@gmail.com**
+5. Check your email at **aadidevproperty@gmail.com**
 6. You should receive a nicely formatted email with all the form details
 
 ### Troubleshooting
@@ -85,7 +85,7 @@ If you need to make changes:
 7. The URL stays the same, so no need to update your website
 
 ### Security Notes
-- The script only sends emails to bhagwatprajaktas@gmail.com
+- The script only sends emails to aadidevproperty@gmail.com
 - Form data is not stored anywhere except in your email
 - The script runs under your Google account
 - Only you can see the script execution logs

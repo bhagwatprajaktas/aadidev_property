@@ -119,7 +119,7 @@ if (inquiryForm) {
             submitButton.textContent = originalText;
             submitButton.disabled = false;
             console.error('Error!', error.message);
-            alert('There was an error sending your inquiry. Please try again or contact us directly at bhagwatprajaktas@gmail.com');
+            alert('There was an error sending your inquiry. Please try again or contact us directly at aadidevproperty@gmail.com');
         });
     });
 }

@@ -15,7 +15,7 @@
 function doPost(e) {
   try {
     // Email address where form submissions will be sent
-    const recipientEmail = "bhagwatprajaktas@gmail.com";
+    const recipientEmail = "aadidevproperty@gmail.com";
     
     // Get form data
     const name = e.parameter.name || '';
