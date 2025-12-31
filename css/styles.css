@@ -992,6 +992,56 @@ body {
     font-size: 0.95rem;
 }
 
+/* Privacy Page */
+.privacy-page {
+    padding: 80px 20px;
+    background: var(--light-bg);
+}
+
+.privacy-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--primary-color);
+    line-height: 1.8;
+}
+
+.privacy-card h2 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.privacy-card h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.25rem;
+    color: #222;
+}
+
+.privacy-card p {
+    color: var(--dark-gray);
+    margin-bottom: 1.2rem;
+}
+
+.privacy-card ol {
+    padding-left: 1.4rem;
+    margin: 0 0 1.5rem 0;
+    color: var(--dark-gray);
+}
+
+.privacy-card li {
+    margin-bottom: 0.75rem;
+}
+
+.privacy-card a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 /* Animations */
 @keyframes fadeInDown {
     from {
