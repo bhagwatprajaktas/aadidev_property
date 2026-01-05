@@ -57,42 +57,42 @@
                 <div class="tab-panels">
                     <div class="tab-panel active" id="featured">
                         <div class="projects-grid">
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/AashinaAaroham.pdf">
                                 <h4>Aashina Aaroham</h4>
                                 <p>Kid-Centric Homes in Gurgaon</p>
                                 <p class="project-description">Family-focused residential community designed with children's needs in mind. Luxury amenities and safe, green spaces.</p>
                                 <span class="visit-link">→ Learn More</span>
                             </a>
 
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/ConscientElira.pdf">
                                 <h4>Conscient Elira, Parq</h4>
                                 <p>Premium Residential in Delhi NCR</p>
                                 <p class="project-description">Contemporary living spaces with world-class amenities. Perfect for modern, connected urban living.</p>
                                 <span class="visit-link">→ Learn More</span>
                             </a>
 
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/EmaarSerenityHills.pdf">
                                 <h4>Emaar Serenity Hills</h4>
                                 <p>Luxury Living Experience</p>
                                 <p class="project-description">Ultra-luxury residential development offering premium lifestyle with extensive amenities and scenic views.</p>
                                 <span class="visit-link">→ Learn More</span>
                             </a>
 
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/BPTPGIA.pdf">
                                 <h4>BPTP GIA, Amstoria</h4>
                                 <p>Premium Gurgaon Residences</p>
                                 <p class="project-description">Well-designed residential complexes in prime Gurgaon locations with luxury finishes.</p>
                                 <span class="visit-link">→ Learn More</span>
                             </a>
 
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/M3MStAndrew.pdf">
                                 <h4>M3M St Andrew, GIC & Antalya Hills</h4>
                                 <p>Iconic M3M Projects</p>
                                 <p class="project-description">Portfolio of premium residential projects offering luxury living with innovative designs.</p>
                                 <span class="visit-link">→ Learn More</span>
                             </a>
 
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/IreoCorridors.pdf">
                                 <h4>Ireo Corridors</h4>
                                 <p>Premium Corridor Living</p>
                                 <p class="project-description">Spacious and well-designed residential units with excellent infrastructure and community living spaces.</p>
@@ -103,14 +103,14 @@
 
                     <div class="tab-panel" id="luxury">
                         <div class="projects-grid">
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/MaxEstate361.pdf">
                                 <h4>Max Estate 361</h4>
                                 <p>Gurgaon's Finest Address</p>
                                 <p class="project-description">Iconic address in Gurgaon offering luxury residences with premium amenities and strategic location.</p>
                                 <span class="visit-link">→ Learn More</span>
                             </a>
 
-                            <a href="javascript:void(0)" class="project-card">
+                            <a href="javascript:void(0)" class="project-card" data-pdf="projects/TARCIshva.pdf">
                                 <h4>TARC Ishva, Trimundra, Kailasha</h4>
                                 <p>Luxury TARC Properties</p>
                                 <p class="project-description">Premium residential developments from TARC, known for architectural excellence and sustainable living solutions.</p>
@@ -186,6 +186,21 @@
             <p>Empowering luxurious living and homeownership dreams through excellence & integrity</p>
         </div>
     </footer>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfModalTitle">Project Details</h3>
+                <div class="pdf-modal-actions">
+                    <button class="close-pdf-modal">&times;</button>
+                </div>
+            </div>
+            <div class="pdf-viewer-container">
+                <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

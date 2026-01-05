@@ -137,3 +137,72 @@ window.addEventListener('scroll', function() {
     });
 });
 
+// PDF Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const pdfModal = document.getElementById('pdfModal');
+    const pdfViewer = document.getElementById('pdfViewer');
+    const pdfModalTitle = document.getElementById('pdfModalTitle');
+    const downloadBtn = document.getElementById('downloadPdfBtn');
+    const closeModalBtn = document.querySelector('.close-pdf-modal');
+    const projectCards = document.querySelectorAll('.project-card[data-pdf]');
+    
+    let currentPdfUrl = '';
+    
+    // Open PDF modal when project card is clicked
+    projectCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            const pdfPath = this.getAttribute('data-pdf');
+            const projectTitle = this.querySelector('h4').textContent;
+            
+            if (pdfPath) {
+                currentPdfUrl = pdfPath;
+                pdfModalTitle.textContent = projectTitle;
+                pdfViewer.src = pdfPath;
+                pdfModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    });
+    
+    // Close modal function
+    function closePdfModal() {
+        pdfModal.classList.remove('active');
+        pdfViewer.src = ''; // Clear iframe
+        currentPdfUrl = '';
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    // Close modal on close button click
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closePdfModal);
+    }
+    
+    // Close modal when clicking outside the modal content
+    pdfModal.addEventListener('click', function(e) {
+        if (e.target === pdfModal) {
+            closePdfModal();
+        }
+    });
+    
+    // Download PDF button
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            if (currentPdfUrl) {
+                const link = document.createElement('a');
+                link.href = currentPdfUrl;
+                link.download = currentPdfUrl.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
+            closePdfModal();
+        }
+    });
+});
