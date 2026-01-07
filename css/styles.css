@@ -651,6 +651,79 @@ body {
     box-shadow: 0 10px 28px rgba(196,30,58,0.12);
 }
 
+/* Project Card Dropdown for M3M */
+.project-card-expandable {
+    cursor: default;
+}
+
+.project-dropdown {
+    margin-top: 1rem;
+    position: relative;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    padding: 4px 5px;
+    background: #ffffff;
+    color: var(--primary-color);
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    display: inline-block;
+    text-align: center;
+}
+
+.dropdown-toggle:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(196,30,58,0.12);
+}
+
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.dropdown-menu.active {
+    max-height: 300px;
+    border: 1px solid #e0e0e0;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 1rem 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    padding-left: 1.5rem;
+}
+
 /* Projects Page */
 .projects-page {
     padding: 60px 20px;

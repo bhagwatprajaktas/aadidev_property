@@ -158,12 +158,48 @@ document.addEventListener('DOMContentLoaded', function() {
             if (pdfPath) {
                 currentPdfUrl = pdfPath;
                 pdfModalTitle.textContent = projectTitle;
-                pdfViewer.src = pdfPath;
+                pdfViewer.src = pdfPath + '#toolbar=0';
                 pdfModal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             }
         });
     });
+    
+    // Handle M3M dropdown toggle
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    if (dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('active');
+        });
+        
+        // Handle dropdown menu item clicks
+        const dropdownLinks = dropdownMenu.querySelectorAll('a[data-pdf]');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const pdfPath = this.getAttribute('data-pdf');
+                const projectTitle = this.textContent;
+                
+                if (pdfPath) {
+                    currentPdfUrl = pdfPath;
+                    pdfModalTitle.textContent = projectTitle;
+                    pdfViewer.src = pdfPath + '#toolbar=0';
+                    pdfModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    dropdownMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            dropdownMenu.classList.remove('active');
+        });
+    }
     
     // Close modal function
     function closePdfModal() {
